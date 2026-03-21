@@ -1,0 +1,106 @@
+@font-face { font-family: "Gotham Book"; src: url(fonts/gotham/Gotham-Book.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Italic"; src: url(fonts/gotham/Gotham-BookItalic.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Bold"; src: url(fonts/gotham/Gotham-Bold.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Medium"; src: url(fonts/gotham/Gotham-Medium.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Light"; src: url(fonts/gotham/Gotham-Light.otf) format("opentype"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: "Imbue Light"; src: url(fonts/imbue/Imbue_14pt-Light.ttf) format("truetype"); font-weight: 400; font-style: normal; } 
+@font-face { font-family: "Imbue Medium"; src: url(fonts/imbue/Imbue_14pt-Medium.ttf) format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Imbue Bold"; src: url(fonts/imbue/Imbue_14pt-ExtraBold.ttf) format("truetype"); font-weight: 400; font-style: normal; }
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Gotham Book", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+  /* color: #415686;  */
+}
+
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px 20vw 0;
+}
+
+h1 a {
+  font-family: "Imbue Light", sans-serif;
+  font-size: 2em; 
+  text-transform: uppercase;
+}
+
+.italic { font-family: "Gotham Italic", Arial, sans-serif; }
+
+a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+a:hover { color: #4e4e4e; }
+a.underline { text-decoration: underline; }
+
+.contact-btn {
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: rgb(237, 237, 237);
+  border-radius: 0px;
+  font-family: "Gotham Medium", sans-serif;
+  font-size: 0.5em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-btn:hover {
+  color: #000;
+  opacity: 0.7;
+  border-radius: 10px;
+  transition: border-radius 200ms ease;
+}
+
+footer {
+  padding: var(--top-pad) var(--side-pad) 0;
+}
+
+.fixed-block {
+  white-space: pre-wrap;   
+  word-wrap: break-word; 
+}
+
+footer.center {
+  display: flex;
+  justify-content: center;
+}
+
+footer.center .social-icons {
+  justify-content: center;
+  font-size: x-large;
+}
+
+@media (max-width: 1000px) {
+  .fixed-block {
+    font-size: smaller; 
+  }
+}
+
+@media (max-width: 825px) {
+  .fixed-block {
+    white-space: normal;
+  }
+}
