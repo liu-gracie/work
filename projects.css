@@ -1,3 +1,38 @@
+@font-face { font-family: "Gotham Book"; src: url(fonts/gotham/Gotham-Book.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Italic"; src: url(fonts/gotham/Gotham-BookItalic.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Bold"; src: url(fonts/gotham/Gotham-Bold.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Medium"; src: url(fonts/gotham/Gotham-Medium.otf) format("opentype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Gotham Light"; src: url(fonts/gotham/Gotham-Light.otf) format("opentype"); font-weight: 400; font-style: normal; }
+
+@font-face { font-family: "Imbue Light"; src: url(fonts/imbue/Imbue_14pt-Light.ttf) format("truetype"); font-weight: 400; font-style: normal; } 
+@font-face { font-family: "Imbue Medium"; src: url(fonts/imbue/Imbue_14pt-Medium.ttf) format("truetype"); font-weight: 400; font-style: normal; }
+@font-face { font-family: "Imbue Bold"; src: url(fonts/imbue/Imbue_14pt-ExtraBold.ttf) format("truetype"); font-weight: 400; font-style: normal; }
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0px;
+}
+
+body {
+  font-family: "Gotham Book", Arial, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto; 
+  padding: 20px 40px; 
+}
+
 .works {
   display: flex;
   flex-direction: column;
@@ -7,9 +42,11 @@
 
 .works img,
 .works video {
-  width: 100%;
-  height: auto;
-  padding: 10px 0;
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    margin: 10px 0px;
 }
 
 .project h2 {
@@ -49,6 +86,7 @@ hr { margin: 50px 50px 0; }
   max-width: calc(50% - 10px);
   height: auto;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
 }
 
 .more {
@@ -60,45 +98,175 @@ hr { margin: 50px 50px 0; }
 
 .more p { padding: 50px 0; }
 
-@media (max-width: 1000px) {
-  .container { padding: 0 20px; }
 
-  .works { padding: 30px 5vw 0; }
+a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out, font-size 0.2s ease-in-out;
+}
+
+a:hover { color: #4e4e4e; }
+a.underline { text-decoration: underline; }
+
+.contact-btn {
+  margin-top: 5px;
+  padding: 10px 20px;
+  background-color: rgb(237, 237, 237);
+  border-radius: 0px;
+  font-family: "Gotham Medium", sans-serif;
+  font-size: 0.5em;
+  text-transform: uppercase;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-btn:hover {
+  color: #000;
+  opacity: 0.7;
+  border-radius: 10px;
+  transition: border-radius 200ms ease;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+footer .social-icons {
+  justify-content: center;
+  font-size: x-large;
+  padding: 40px 20px; 
+}
+
+.social-icons a {
+  text-decoration: none;
+  color: #000;
+  transition: opacity 0.2s ease;
+}
+
+.social-icons a:hover {
+  opacity: 0.5;
+}
+
+/** ------------------------------- MEDIA ---------------------------- **/ 
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 6em;
+    line-height: 0.9;
+    padding-left: 0;
+  }
+
+  .intro p {
+    padding-left: 0;
+  }
+
+  .nav-links {
+    padding: 0;
+    flex-wrap: wrap;
+  }
+
+  .project-feed {
+    grid-template-columns: 1fr;
+    padding: 30px 0;
+  }
+
+  .drawing img {
+    padding: 40px 0;
+  }
+
+  .works {
+    padding: 30px 0 0;
+  }
 
   .project h2 {
-    padding: 20px 0 0;
-    font-size: large;
+    padding: 40px 0 0;
+    font-size: 1.7rem;
   }
 
   .project h3,
   .project h4 {
     padding: 0;
-    font-size: small;
   }
 
   p {
-    padding: 20px 0;
-    font-size: small;
+    padding: 30px 0;
   }
 
-  hr { margin: 20px 0 0; }
-
-  .details { padding: 10px 0px; }
-
-  .more { padding: 0 5vw 30px; }
-
-  .more p { padding: 20px 0; }
-
-  .row { flex-direction: column; }
-
-  .row img {
-    flex: 1 1 auto;
-    max-width: 100%;
+  hr {
+    margin: 40px 0 0;
   }
-  
+
+  .more {
+    padding: 0 0 40px;
+  }
+
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .container {
+    padding: 16px;
+  }
+
+  header {
+    padding: 16px 0;
+  }
+
+  h1 {
+    font-size: 4em;
+  }
+
+  .nav-links {
+    gap: 14px;
+    font-size: 0.9rem;
+  }
+
+  .feed-title {
+    padding-top: 30px;
+  }
+
+  .feed-item {
+    aspect-ratio: 1 / 1;
+  }
+
+  .feed-meta {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  .feed-meta h3 {
+    font-size: 1rem;
+  }
+
+  .feed-meta h4 {
+    font-size: 0.85rem;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .row img,
   .row video {
-    flex: 1 1 auto;
     max-width: 100%;
+    flex-basis: auto;
   }
-  
+
+  .more {
+    display: flex;
+    justify-content: space-between;
+  }
+
+
+  .contact-btn {
+    font-size: 0.75rem;
+    padding: 12px 18px;
+  }
 }
