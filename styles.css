@@ -213,14 +213,20 @@ h1 {
 .feed-item {
   width: 100%;
   position: relative;
-  display: block;
-  overflow: visible;
+  display: flex;
+  flex-direction: column;
   border-radius: 0px;
-  transition: border-radius 200ms ease, opacity 200ms ease;
-  margin: 20px 0px 20px 0px; 
+  margin: 20px 0px;
   text-decoration: none;
+  color: inherit;
+}
 
-  aspect-ratio: 2 / 1;
+/* Image / video wrapper — aspect ratio lives here only */
+.feed-thumb {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  position: relative;
 }
 
 .feed-item img,
@@ -229,11 +235,14 @@ h1 {
   height: 100%;
   display: block;
   padding: 0;
-
-  object-fit: cover; 
+  object-fit: cover;
   object-position: center;
+  transition: transform 500ms ease;
+}
 
-  transition: filter 200ms ease, transform 200ms ease;
+.feed-item:hover img,
+.feed-item:hover video {
+  transform: scale(1.03);
 }
 
 .feed-meta {
@@ -260,8 +269,8 @@ h1 {
   color: #666;
 }
 
-.feed-item:hover {
-  border-radius: 10px;
+.feed-item:hover .feed-meta h3 {
+  opacity: 0.6;
 }
 
 /** ---------------------------- FOOTER --------------------------- **/
